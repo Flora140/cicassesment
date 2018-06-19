@@ -75,7 +75,7 @@ public class CicController {
      * @param cic
      * @throws NotFoundException
      */
-    @PostMapping(path = "{id}/send", produces = MediaType.APPLICATION_JSON_VALUE,
+    @PostMapping(path = "{id}/", produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public void sendMail(@PathVariable("id") Long id,
                          @RequestBody Cic cic) throws NotFoundException
