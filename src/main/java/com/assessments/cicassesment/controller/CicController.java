@@ -75,7 +75,7 @@ public class CicController {
      * @param cic
      * @throws NotFoundException
      */
-    @PostMapping(path = "{id}/", produces = MediaType.APPLICATION_JSON_VALUE,
+    @PostMapping(path = ("{id}/send"), produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public void sendMail(@PathVariable("id") Long id,
                          @RequestBody Cic cic) throws NotFoundException
@@ -88,7 +88,7 @@ public class CicController {
      * @param id
      * @param recipient
      */
-    @PutMapping(path = "edit/{id}", produces = MediaType.APPLICATION_JSON_VALUE,
+    @PutMapping(path = ("edit/{id}"), produces = MediaType.APPLICATION_JSON_VALUE,
             consumes = MediaType.APPLICATION_JSON_VALUE)
     public void editRecipient(@PathVariable("id") Long id,
                               @RequestBody RecipientEntity recipient){
@@ -100,7 +100,7 @@ public class CicController {
      * @param id
      * @throws NotFoundException
      */
-    @DeleteMapping(path = "delete/{id}",  produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(path = ("delete/{id}"),  produces = MediaType.APPLICATION_JSON_VALUE)
     public void deleteRecipient(@PathVariable("id") Long id) throws NotFoundException {
         service.deleteRecipient(id);
     }
